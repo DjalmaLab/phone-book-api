@@ -21,14 +21,12 @@ class Contact():
     def __init__(self, first_name, phone_num):
         self.first_name = first_name
         self.phone_num = phone_num
-    
+        
     def add(self):
         phone_book[self.first_name] = self.phone_num
 
 jonathan = Contact('Jonathan', '123-123')
-
 jonathan.add()
-
 #create empty string to store user input
 user_input = ""
 
@@ -36,46 +34,46 @@ user_input = ""
 
 def user_input1():
     #ask user for the first name of the contact  
-    first_name = raw_input("What is the contact's first name? ")
+    first_name = input("What is the contact's first name?")
     if first_name in phone_book:
     #obtain phone number using dictionary key
-        print "%s's phone number is: " % first_name + phone_book[first_name]
+        print ("%s's phone number is: " % first_name + phone_book[first_name])
     else:
-        print "Contact does not exist."
+        print ("Contact does not exist.")
     start()
 
 def user_input2():
-    first_name = raw_input("What is the contact's first name? ")
-    phone_num = raw_input("What is the contact's phone number ")
+    first_name = input("What is the contact's first name? ")
+    phone_num = input("What is the contact's phone number ")
     first_name = first_name.lower()
     first_name = Contact(first_name, phone_num)
     first_name.add()
-    print "%s has been added to the phone book." % first_name.first_name
+    print ("%s has been added to the phone book." % first_name.first_name)
     start()
 
 def user_input3():
-    first_name = raw_input("What is the contact's first name? ")
+    first_name = input("What is the contact's first name? ")
     phone_book.pop(first_name)
-    print first_name + " has been deleted from the phone book."
+    print(first_name + " has been deleted from the phone book.")
     start()
 
 def user_input4():
-    print phone_book
+    print (phone_book)
     start()
 
 def user_input5():
     sorted_phone = sorted(phone_book.items(), key=operator.itemgetter(0))
-    print sorted_phone
+    print (sorted_phone)
     start()
 
 def user_input6():
-    print "Session Ended"
+    print ("Session Ended")
 
 def start():
     #print menu
-    print menu
+    print (menu)
     #collect user's desired action
-    user_input = raw_input("What do you want to do (select 1-6)? ")
+    user_input = input("What do you want to do (select 1-6)? ")
     #if statement for 1 - 5 to determine outcome
 
     #if user selects 1, look up entry
@@ -103,3 +101,5 @@ def start():
 
 #start program
 start()
+# -*- coding: utf-8 -*-
+
